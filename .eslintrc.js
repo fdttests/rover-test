@@ -34,7 +34,7 @@ module.exports = {
           }
         }
       ],
-      "indent": ["error", 2, { "SwitchCase": 1 }],
+      "indent": ["error", 4, { "SwitchCase": 1 }],
       "@typescript-eslint/member-ordering": "error",
       "@typescript-eslint/no-empty-function": "off",
       "@typescript-eslint/no-empty-interface": "error",
