@@ -12,25 +12,25 @@ export const command: string = 'move-rover <filePath>';
 export const desc: string = 'Move the squad of rovers accordingly a received input <filePath>';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
-  yargs
-    .positional('filePath', { type: 'string', demandOption: true });
+    yargs
+        .positional('filePath', { type: 'string', demandOption: true });
 
 export const handler = (argv: Arguments<Options>): void => {
-  const { filePath } = argv;
-  const parseFileUseCase = new ParseFileIntoRoverInstructionsUseCase();
-  const sendInstructionsToRoversUseCase = new SendInstructionsToRoversUseCase();
+    const { filePath } = argv;
+    const parseFileUseCase = new ParseFileIntoRoverInstructionsUseCase();
+    const sendInstructionsToRoversUseCase = new SendInstructionsToRoversUseCase();
 
-  const fileContent = fs.readFileSync(filePath, 'utf8');
+    const fileContent = fs.readFileSync(filePath, 'utf8');
 
-  const instructions = parseFileUseCase.execute(fileContent);
-  const output = sendInstructionsToRoversUseCase.execute(instructions);
+    const instructions = parseFileUseCase.execute(fileContent);
+    const output = sendInstructionsToRoversUseCase.execute(instructions);
 
-  console.log('The following instructions were received from file: ');
+    console.log('The following instructions were received from file: ');
 
-  output.forEach((rover: Rover) => {
-    console.log(JSON.stringify(rover));
-  });
+    output.forEach((rover: Rover) => {
+        console.log(JSON.stringify(rover));
+    });
 
-  console.log('Finishing program');
-  process.exit(0);
+    console.log('Finishing program');
+    process.exit(0);
 };
