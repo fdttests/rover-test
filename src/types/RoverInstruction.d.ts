@@ -1,4 +1,4 @@
-export type RoverInstruction = {
-    rover: Rover,
-    instruction: string
+export interface RoverInstruction {
+    rover: Rover;
+    instruction: string;
 }

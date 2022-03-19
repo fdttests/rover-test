@@ -1,7 +1,7 @@
 import Plateau from "../models/Plateau";
 import { RoverInstruction } from "./RoverInstruction";
 
-export type RoverInstructionCollection = {
+export interface RoverInstructionCollection {
     plateau: Plateau;
     instructions: Array<RoverInstruction>;
-};
+}
