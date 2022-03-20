@@ -11,7 +11,7 @@ describe('File Normalizer Test', () => {
         const normalizedFileTwo = useCase.execute(fileTwo);
 
         expect(normalizedFileOne).toBe(normalizedFileTwo);
-        expect(normalizedFileOne).not.toBe(fileOne);
+        expect(normalizedFileTwo).not.toBe(fileTwo);
         expect(normalizedFileOne.split('\n').length).toBe(5);
     });
 });
