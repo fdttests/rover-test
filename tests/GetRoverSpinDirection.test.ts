@@ -10,13 +10,13 @@ describe('Get Rover Spin Direction Test', () => {
 
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Clockwise});
         expect(direction).toBe(DirectionEnum.East);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Clockwise});
         expect(direction).toBe(DirectionEnum.South);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Clockwise});
         expect(direction).toBe(DirectionEnum.West);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Clockwise});
         expect(direction).toBe(DirectionEnum.North);
     });
@@ -26,13 +26,13 @@ describe('Get Rover Spin Direction Test', () => {
 
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Anticlockwise});
         expect(direction).toBe(DirectionEnum.West);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Anticlockwise});
         expect(direction).toBe(DirectionEnum.South);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Anticlockwise});
         expect(direction).toBe(DirectionEnum.East);
-        
+
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Anticlockwise});
         expect(direction).toBe(DirectionEnum.North);
     });

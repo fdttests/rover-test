@@ -8,17 +8,17 @@ export default class SendInstructionsToRoversUseCase {
 
         instructions.instructions.forEach(instruction => {
             const rover = new Rover(
-                instruction.deployLocation.xPosition, 
-                instruction.deployLocation.yPosition, 
+                instruction.deployLocation.xPosition,
+                instruction.deployLocation.yPosition,
                 instruction.deployLocation.direction,
                 instructions.plateau
             );
 
             const movements: Array<MovementEnum> = <Array<MovementEnum>>instruction.instruction.split('');
-            
+
             movements.forEach(movement => {
                 rover.move(movement);
-            })
+            });
 
             deployedRovers.push(rover);
         });

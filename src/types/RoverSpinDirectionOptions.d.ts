@@ -3,6 +3,6 @@ import { MovementEnum } from "../enums/MovementEnum";
 import { SpinDirectionEnum } from "../enums/SpinDirectionEnum";
 
 export default interface RoverSpinDirectionOptions {
-    currentDirection: DirectionEnum, 
-    spin: SpinDirectionEnum
+    currentDirection: DirectionEnum;
+    spin: SpinDirectionEnum;
 }

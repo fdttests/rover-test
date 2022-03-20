@@ -17,16 +17,15 @@ export default class GetRoverSpinDirectionUseCase {
 
         switch (spinOptions.spin) {
             case SpinDirectionEnum.Anticlockwise:
-                newIndex = currentIndex - 1; 
+                newIndex = currentIndex - 1;
 
                 return this.directions[newIndex >= 0 ? newIndex: lastIndex];
             case SpinDirectionEnum.Clockwise:
-                newIndex = currentIndex + 1; 
+                newIndex = currentIndex + 1;
 
                 return this.directions[newIndex <= lastIndex ? newIndex: 0];
             default:
                 throw new Error('Invalid spin direction');
         }
-
     }
 }
