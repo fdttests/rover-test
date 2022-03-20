@@ -6,8 +6,8 @@ import Plateau from "./Plateau";
 
 export default class Rover {
     public constructor(
-        public xPosition: number = 0,
         public yPosition: number = 0,
+        public xPosition: number = 0,
         public direction: DirectionEnum,
         public plateau: Plateau,
         private getRoverSpinDirectionUseCase: GetRoverSpinDirectionUseCase = new GetRoverSpinDirectionUseCase()
@@ -27,7 +27,7 @@ export default class Rover {
                 this.moveFoward();
                 break;
             default:
-                throw new Error('Invalid movement provided');
+                throw new Error('Invalid movement provided!');
         }
     }
 

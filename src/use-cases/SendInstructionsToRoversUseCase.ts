@@ -14,8 +14,8 @@ export default class SendInstructionsToRoversUseCase {
             );
 
             const rover = new Rover(
-                instruction.deployLocation.xPosition,
                 instruction.deployLocation.yPosition,
+                instruction.deployLocation.xPosition,
                 instruction.deployLocation.direction,
                 plateau
             );
