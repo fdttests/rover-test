@@ -12,16 +12,15 @@ describe('Plateau Test', () => {
 
     it('should throw a error when given invalid Y size', () => {
         const test = () => {
-            new Plateau(0, 15)
+            new Plateau(0, 15);
         };
 
         expect(test).toThrowError('Invalid plateau Y size!');
     });
 
-    
     it('should throw a error when given invalid X size', () => {
         const test = () => {
-            new Plateau(15, 0)
+            new Plateau(15, 0);
         };
 
         expect(test).toThrowError('Invalid plateau X size!');

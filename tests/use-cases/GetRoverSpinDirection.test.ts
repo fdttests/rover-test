@@ -47,7 +47,7 @@ describe('Get Rover Spin Direction Test', () => {
 
         expect(test).toThrowError('Invalid spin direction');
     });
-    
+
     it('should produce error when given invalid direction', () => {
         const test = () => {
             useCase.execute({

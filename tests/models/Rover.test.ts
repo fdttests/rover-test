@@ -19,13 +19,13 @@ describe('Plateau Test', () => {
 
         rover.move(MovementEnum.Move);
         expect(rover.yPosition).toBe(2);
-        
+
         rover.move(MovementEnum.Move);
         expect(rover.yPosition).toBe(3);
 
         rover.move(MovementEnum.Right);
         expect(rover.direction).toBe(DirectionEnum.East);
-        
+
         rover.move(MovementEnum.Move);
         expect(rover.xPosition).toBe(2);
 
@@ -37,7 +37,7 @@ describe('Plateau Test', () => {
 
         rover.move(MovementEnum.Move);
         expect(rover.yPosition).toBe(2);
-        
+
         rover.move(MovementEnum.Move);
         expect(rover.yPosition).toBe(1);
 
@@ -56,7 +56,7 @@ describe('Plateau Test', () => {
 
     it('should throw a error when creating with invalid Y position', () => {
         const plateau = new Plateau(15, 15);
-        
+
         const test = () => {
             new Rover(16, 5, DirectionEnum.North, plateau);
         };
@@ -66,7 +66,7 @@ describe('Plateau Test', () => {
 
     it('should throw a error when creating with invalid X position', () => {
         const plateau = new Plateau(15, 15);
-        
+
         const test = () => {
             new Rover(10, 16, DirectionEnum.North, plateau);
         };
@@ -76,7 +76,7 @@ describe('Plateau Test', () => {
 
     it('should throw a error when trying to move to invalid Y position', () => {
         const plateau = new Plateau(15, 15);
-        
+
         const testMaxY = () => {
             const rover = new Rover(15, 5, DirectionEnum.North, plateau);
 
@@ -95,7 +95,7 @@ describe('Plateau Test', () => {
 
     it('should throw a error when trying to move to invalid X position', () => {
         const plateau = new Plateau(15, 15);
-        
+
         const testMaxY = () => {
             const rover = new Rover(10, 15, DirectionEnum.East, plateau);
 

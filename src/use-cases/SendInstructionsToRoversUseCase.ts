@@ -9,7 +9,7 @@ export default class SendInstructionsToRoversUseCase {
 
         instructions.instructions.forEach(instruction => {
             const plateau = new Plateau(
-                instructions.plateauSize.y, 
+                instructions.plateauSize.y,
                 instructions.plateauSize.x
             );
 

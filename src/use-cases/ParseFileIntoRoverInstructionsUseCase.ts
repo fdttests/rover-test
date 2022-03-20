@@ -36,7 +36,7 @@ export default class ParseFileIntoRoverInstructionsUseCase {
         return {
             plateauSize: {
                 x: parseInt(plateauX),
-                y: parseInt(plateauY) 
+                y: parseInt(plateauY)
             },
             instructions
         };
