@@ -11,11 +11,11 @@ export default class Plateau {
 
     private validate() {
         if (this.maxY <= this.minY) {
-            throw new Error('Invalid plateau size!');
+            throw new Error('Invalid plateau Y size!');
         }
 
         if (this.maxX <= this.minX) {
-            throw new Error('Invalid plateau size!');
+            throw new Error('Invalid plateau X size!');
         }
     }
 }
