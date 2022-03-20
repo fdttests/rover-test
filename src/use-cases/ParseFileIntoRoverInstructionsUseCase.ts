@@ -1,4 +1,4 @@
-import Plateau from "../models/Plateau";
+import { DirectionEnum } from "../enums/DirectionEnum";
 import RoverInstruction from "../types/RoverInstruction";
 import RoverInstructionCollection from "../types/RoverInstructionCollection";
 import FileNormalizerUseCase from "./FileNormalizerUseCase";
@@ -28,13 +28,16 @@ export default class ParseFileIntoRoverInstructionsUseCase {
                 deployLocation: {
                     xPosition: parseInt(xPosition),
                     yPosition: parseInt(yPosition),
-                    direction: <any>direction
+                    direction: <DirectionEnum>direction
                 }
             });
         }
 
         return {
-            plateau: new Plateau(parseInt(plateauX), parseInt(plateauY)),
+            plateauSize: {
+                x: parseInt(plateauX),
+                y: parseInt(plateauY) 
+            },
             instructions
         };
     }

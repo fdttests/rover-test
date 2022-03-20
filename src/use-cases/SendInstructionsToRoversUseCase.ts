@@ -1,4 +1,5 @@
 import { MovementEnum } from "../enums/MovementEnum";
+import Plateau from "../models/Plateau";
 import Rover from "../models/Rover";
 import RoverInstructionCollection from "../types/RoverInstructionCollection";
 
@@ -7,11 +8,16 @@ export default class SendInstructionsToRoversUseCase {
         const deployedRovers: Array<Rover> = [];
 
         instructions.instructions.forEach(instruction => {
+            const plateau = new Plateau(
+                instructions.plateauSize.y, 
+                instructions.plateauSize.x
+            );
+
             const rover = new Rover(
                 instruction.deployLocation.xPosition,
                 instruction.deployLocation.yPosition,
                 instruction.deployLocation.direction,
-                instructions.plateau
+                plateau
             );
 
             const movements: Array<MovementEnum> = <Array<MovementEnum>>instruction.instruction.split('');
