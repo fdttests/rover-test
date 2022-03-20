@@ -1,7 +1,7 @@
 import Plateau from "../models/Plateau";
-import { RoverInstruction } from "./RoverInstruction";
+import RoverInstruction  from "./RoverInstruction";
 
-export interface RoverInstructionCollection {
+export default interface RoverInstructionCollection {
     plateau: Plateau;
     instructions: Array<RoverInstruction>;
 }

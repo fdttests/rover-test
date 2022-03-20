@@ -1,6 +1,6 @@
 import Plateau from "../models/Plateau";
-import Rover from "../models/Rover";
-import { RoverInstructionCollection } from "../types/RoverInstructionCollection";
+import RoverInstruction from "../types/RoverInstruction";
+import RoverInstructionCollection from "../types/RoverInstructionCollection";
 import FileNormalizerUseCase from "./FileNormalizerUseCase";
 
 export default class ParseFileIntoRoverInstructionsUseCase {
@@ -17,15 +17,19 @@ export default class ParseFileIntoRoverInstructionsUseCase {
         }
 
         const [plateauX, plateauY] = lines[0].split(' ');
-        const instructions = [];
+        const instructions: Array<RoverInstruction> = [];
 
         for (let i = 1; i < lines.length; i += 2) {
-            const [positionX, positionY, direction] = lines[i].split(' ');
+            const [xPosition, yPosition, direction] = lines[i].split(' ');
             const instruction = lines[i + 1];
 
             instructions.push({
-                rover: new Rover(parseInt(positionX), parseInt(positionY), <any>direction),
-                instruction: instruction
+                instruction: instruction,
+                deployLocation: {
+                    xPosition: parseInt(xPosition),
+                    yPosition: parseInt(yPosition),
+                    direction: <any>direction
+                }
             });
         }
 
