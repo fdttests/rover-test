@@ -113,7 +113,7 @@ module.exports = {
         }
       ],
       "no-debugger": "error",
-      "no-empty": "off",
+      "no-empty": "error",
       "no-eval": "error",
       "no-fallthrough": "error",
       "no-new-wrappers": "error",
@@ -126,11 +126,11 @@ module.exports = {
       "no-throw-literal": "error",
       "no-trailing-spaces": "error",
       "no-undef-init": "error",
-      "no-underscore-dangle": "off",
+      "no-underscore-dangle": "error",
       "no-unused-labels": "error",
       "no-var": "error",
-      "prefer-const": "off",
-      "radix": "error",
+      "prefer-const": "error",
+      "radix": "off",
       "spaced-comment": [
         "off",
         "always",
