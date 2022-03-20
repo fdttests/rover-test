@@ -17,14 +17,14 @@ describe('Parse File Into Rover Instructions Test', () => {
 
         expect(instructions.instructions.length).toBe(2);
 
-        expect(instructionOne.rover.xPosition).toBe(1);
-        expect(instructionOne.rover.yPosition).toBe(2);
-        expect(instructionOne.rover.direction).toBe(DirectionEnum.North);
+        expect(instructionOne.deployLocation.xPosition).toBe(1);
+        expect(instructionOne.deployLocation.yPosition).toBe(2);
+        expect(instructionOne.deployLocation.direction).toBe(DirectionEnum.North);
         expect(instructionOne.instruction).toBe('LMLMLMLMM');
 
-        expect(instructionTwo.rover.xPosition).toBe(3);
-        expect(instructionTwo.rover.yPosition).toBe(3);
-        expect(instructionTwo.rover.direction).toBe(DirectionEnum.East);
+        expect(instructionTwo.deployLocation.xPosition).toBe(3);
+        expect(instructionTwo.deployLocation.yPosition).toBe(3);
+        expect(instructionTwo.deployLocation.direction).toBe(DirectionEnum.East);
         expect(instructionTwo.instruction).toBe('MMRMMRMRRM');
     });
 });

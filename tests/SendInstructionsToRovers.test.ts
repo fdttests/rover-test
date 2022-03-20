@@ -1,6 +1,5 @@
 import { DirectionEnum } from "../src/enums/DirectionEnum";
 import Plateau from "../src/models/Plateau";
-import Rover from "../src/models/Rover";
 import SendInstructionsToRoversUseCase from "../src/use-cases/SendInstructionsToRoversUseCase";
 
 describe('Send Instructions to Rovers Test', () => {
@@ -11,11 +10,19 @@ describe('Send Instructions to Rovers Test', () => {
             plateau: new Plateau(5, 5),
             instructions: [
                 {
-                    rover: new Rover(1, 2, DirectionEnum.North),
+                    deployLocation: {
+                        xPosition: 1,
+                        yPosition: 2,
+                        direction: DirectionEnum.North
+                    },
                     instruction: 'LMLMLMLMM'
                 },
                 {
-                    rover: new Rover(3, 3, DirectionEnum.East),
+                    deployLocation: {
+                        xPosition: 3,
+                        yPosition: 3,
+                        direction: DirectionEnum.East
+                    },
                     instruction: 'MMRMMRMRRM'
                 }
             ]
