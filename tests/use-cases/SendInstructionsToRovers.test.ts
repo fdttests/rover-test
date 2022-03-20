@@ -1,5 +1,5 @@
-import { DirectionEnum } from "../src/enums/DirectionEnum";
-import SendInstructionsToRoversUseCase from "../src/use-cases/SendInstructionsToRoversUseCase";
+import { DirectionEnum } from "../../src/enums/DirectionEnum";
+import SendInstructionsToRoversUseCase from "../../src/use-cases/SendInstructionsToRoversUseCase";
 
 describe('Send Instructions to Rovers Test', () => {
     it('should return correct position given the instructions', () => {

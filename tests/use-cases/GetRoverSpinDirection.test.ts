@@ -1,6 +1,6 @@
-import GetRoverSpinDirectionUseCase from "../src/use-cases/GetRoverSpinDirectionUseCase";
-import { DirectionEnum } from "../src/enums/DirectionEnum";
-import { SpinDirectionEnum } from "../src/enums/SpinDirectionEnum";
+import GetRoverSpinDirectionUseCase from "../../src/use-cases/GetRoverSpinDirectionUseCase";
+import { DirectionEnum } from "../../src/enums/DirectionEnum";
+import { SpinDirectionEnum } from "../../src/enums/SpinDirectionEnum";
 
 describe('Get Rover Spin Direction Test', () => {
     const useCase = new GetRoverSpinDirectionUseCase();

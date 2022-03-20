@@ -1,5 +1,5 @@
-import { DirectionEnum } from "../src/enums/DirectionEnum";
-import ParseFileIntoRoverInstructionsUseCase from "../src/use-cases/ParseFileIntoRoverInstructionsUseCase";
+import { DirectionEnum } from "../../src/enums/DirectionEnum";
+import ParseFileIntoRoverInstructionsUseCase from "../../src/use-cases/ParseFileIntoRoverInstructionsUseCase";
 import * as fs from 'fs';
 
 describe('Parse File Into Rover Instructions Test', () => {

@@ -1,4 +1,4 @@
-import FileNormalizerUseCase from "../src/use-cases/FileNormalizerUseCase";
+import FileNormalizerUseCase from "../../src/use-cases/FileNormalizerUseCase";
 import * as fs from 'fs';
 
 describe('File Normalizer Test', () => {
