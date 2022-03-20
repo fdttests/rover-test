@@ -6,7 +6,7 @@ describe('Send Instructions to Rovers Test', () => {
     it('should return correct position given the instructions', () => {
         const sendInstructionsToRoversUseCase = new SendInstructionsToRoversUseCase();
 
-        const [roverOne, roverTwo] = sendInstructionsToRoversUseCase.execute({
+        const rovers = sendInstructionsToRoversUseCase.execute({
             plateau: new Plateau(5, 5),
             instructions: [
                 {
@@ -27,6 +27,10 @@ describe('Send Instructions to Rovers Test', () => {
                 }
             ]
         });
+
+        expect(rovers.length).toBe(2);
+
+        const [roverOne, roverTwo] = rovers;
 
         expect(roverOne.xPosition).toBe(1);
         expect(roverOne.yPosition).toBe(3);
