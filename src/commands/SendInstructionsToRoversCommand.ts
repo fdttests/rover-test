@@ -25,10 +25,10 @@ export const handler = (argv: Arguments<Options>): void => {
     const instructions = parseFileUseCase.execute(fileContent);
     const output = sendInstructionsToRoversUseCase.execute(instructions);
 
-    console.log('The following instructions were received from file: ');
+    console.log(`[${output.length}] rovers were deployed with the following positions: `);
 
-    output.forEach((rover: Rover) => {
-        console.log(JSON.stringify(rover));
+    output.forEach((rover: Rover, index) => {
+        console.log(`Rover [${index + 1}] - ${rover.getFormattedLocation()}`);
     });
 
     console.log('Finishing program');
