@@ -25,6 +25,6 @@ Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Notes
 
-* The app was developed using a minimal npm/ts project scructure with a single dependency of ``yargs`` to parse the arguments received by the CLI. The rest of dependencies refers to types for typescript, eslint for code standarlization, typescript for build and jest for tests;
+* The app was developed using a minimal npm/ts project scructure with a single dependency of ``yargs`` to parse the arguments received by the CLI. The rest of dependencies refers to types for typescript, eslint for code standardization, typescript for build and jest for tests;
 * For the sake of simplicity, no additional task runners were included, such as gulp, grunt or webpack. Only the native npm scripts were used;
 * The graphical output of the app is not very user friendly (is hard to know what is happening, only the current position of the rovers is returned), but I decided to keep that way because it may be a requirement of the project that only raw text is returned on the output.
