@@ -1,5 +1,4 @@
 import { DirectionEnum } from "../src/enums/DirectionEnum";
-import Plateau from "../src/models/Plateau";
 import SendInstructionsToRoversUseCase from "../src/use-cases/SendInstructionsToRoversUseCase";
 
 describe('Send Instructions to Rovers Test', () => {
@@ -7,7 +6,10 @@ describe('Send Instructions to Rovers Test', () => {
         const sendInstructionsToRoversUseCase = new SendInstructionsToRoversUseCase();
 
         const rovers = sendInstructionsToRoversUseCase.execute({
-            plateau: new Plateau(5, 5),
+            plateauSize: {
+                x: 5,
+                y: 5
+            },
             instructions: [
                 {
                     deployLocation: {

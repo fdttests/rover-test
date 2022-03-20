@@ -3,17 +3,16 @@ import ParseFileIntoRoverInstructionsUseCase from "../src/use-cases/ParseFileInt
 import * as fs from 'fs';
 
 describe('Parse File Into Rover Instructions Test', () => {
+    const useCase = new ParseFileIntoRoverInstructionsUseCase();
+
     it('should parse the instructions given the file content', () => {
-        const parseFileIntoRoverInstructionsUseCase = new ParseFileIntoRoverInstructionsUseCase();
         const fileContent = fs.readFileSync('./tests/mocks/normalized-instructions.txt', 'utf8');
 
-        const instructions = parseFileIntoRoverInstructionsUseCase.execute(fileContent);
+        const instructions = useCase.execute(fileContent);
         const [instructionOne, instructionTwo] = instructions.instructions;
 
-        expect(instructions.plateau.minX).toBe(0);
-        expect(instructions.plateau.maxX).toBe(5);
-        expect(instructions.plateau.minY).toBe(0);
-        expect(instructions.plateau.maxY).toBe(5);
+        expect(instructions.plateauSize.x).toBe(5);
+        expect(instructions.plateauSize.y).toBe(5);
 
         expect(instructions.instructions.length).toBe(2);
 
@@ -26,5 +25,24 @@ describe('Parse File Into Rover Instructions Test', () => {
         expect(instructionTwo.deployLocation.yPosition).toBe(3);
         expect(instructionTwo.deployLocation.direction).toBe(DirectionEnum.East);
         expect(instructionTwo.instruction).toBe('MMRMMRMRRM');
+    });
+
+    it('should throw error when file content is empty', () => {
+        const test = () => {
+            useCase.execute('');
+        };
+
+        expect(test).toThrowError('Invalid File!');
+    });
+
+    it('should throw error when file content has invalid number of lines', () => {
+        const test = () => {
+            useCase.execute(`
+                4 4
+                5 5 E    
+            `);
+        };
+
+        expect(test).toThrowError('Invalid File!');
     });
 });

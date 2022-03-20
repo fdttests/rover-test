@@ -36,4 +36,26 @@ describe('Get Rover Spin Direction Test', () => {
         direction = useCase.execute({currentDirection: direction, spin: SpinDirectionEnum.Anticlockwise});
         expect(direction).toBe(DirectionEnum.North);
     });
+
+    it('should produce error when given invalid spin', () => {
+        const test = () => {
+            useCase.execute({
+                currentDirection: DirectionEnum.North,
+                spin: <any>'Invalid'
+            });
+        };
+
+        expect(test).toThrowError('Invalid spin direction');
+    });
+    
+    it('should produce error when given invalid direction', () => {
+        const test = () => {
+            useCase.execute({
+                currentDirection: <any>'Invalid',
+                spin: SpinDirectionEnum.Clockwise
+            });
+        };
+
+        expect(test).toThrowError('Invalid direction');
+    });
 });
