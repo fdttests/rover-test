@@ -15,7 +15,7 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 
 ## Running the app
 
-After building the app, you can run `npm run app:cli -- move-rovers [filePath]` to send instructions to the rovers. The file must be valid instructions to rovers deploy. Some examples are included in project on the folder `sample-data`.
+After building the app, you can run `npm run app:cli -- move-rovers [filePath]` to send instructions to the rovers. The file must have valid instructions to rovers deploy. Some examples are included in project on the folder `sample-data`.
 
 ## Running the sample
 
